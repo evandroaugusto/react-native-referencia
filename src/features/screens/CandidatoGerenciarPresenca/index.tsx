@@ -1,10 +1,9 @@
-import { Text } from '@react-navigation/elements';
-import { StyleSheet, View } from 'react-native';
+import { View, Text, StyleSheet } from "react-native";
 
-export function Updates() {
+export function CandidatoGerenciarPresencaScreen() {
   return (
     <View style={styles.container}>
-      <Text>Updates Screen</Text>
+      <Text>Tela Gerenciar Presenca</Text>
     </View>
   );
 }
