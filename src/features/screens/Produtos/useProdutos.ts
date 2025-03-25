@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { consultarProdutosApi } from "../../api/http/produtos.http";
+import { consultarProdutosHttp } from "../../api/http/produtos.http";
 import { Produto } from "../../models/Produto";
 
 export const useProdutos = () => {
@@ -13,7 +13,7 @@ export const useProdutos = () => {
   const carregarProdutos = async () => {
     setLoading(true);
     try {
-      const res = await consultarProdutosApi();
+      const res = await consultarProdutosHttp();
       setProdutos(res)
     } catch (e) {
       console.error(e);

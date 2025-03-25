@@ -8,13 +8,13 @@ type ResponseProdutos = {
   limit: number
 }
 
-export const criarProdutoApi = async (produto: Produto) => {
+export const criarProdutoHttp = async (produto: Produto) => {
   return await httpClient.post(
     'products/add', produto
   );
 }
 
-export const consultarProdutosApi = async () => {
+export const consultarProdutosHttp = async () => {
   const select = 'id,title,price,description,category,thumbnail,images';
   const response = await httpClient.get<ResponseProdutos>(
     'products', {params: {select}}
@@ -23,7 +23,7 @@ export const consultarProdutosApi = async () => {
   return response.data.products;
 }
 
-export const consultarProdutoApi = async (produtoId: string) => {
+export const consultarProdutoHttp = async (produtoId: string) => {
   return await httpClient.get<Produto>(`products/${produtoId}`).then(
     res => res.data
   );

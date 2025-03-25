@@ -2,7 +2,7 @@ import { httpClient } from "../../../core/http";
 import { AuthToken } from "../../models/AuthToken";
 import { AuthUser } from "../../models/AuthUser";
 
-export const loginApi = async (username:string, password: string) => {
+export const loginHttp = async (username:string, password: string) => {
   const res = await httpClient.post<AuthUser>('auth/login',{
     username,
     password,
